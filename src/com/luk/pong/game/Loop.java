@@ -1,15 +1,17 @@
-package com.luk.pong;
+package com.luk.pong.game;
 
 import android.app.Activity;
+import android.content.Context;
 import android.graphics.Color;
 import android.os.Handler;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.ImageView;
 
 public class Loop {
 	private static boolean isStarted = false;
 	private static Handler handler = new Handler();
-	private static Ball mBall = new Ball(null);
+	private static Ball mBall;
 	private static Activity activity;
 	private static View layout;
 	private static ImageView ball_t;
@@ -38,15 +40,18 @@ public class Loop {
 		}
 
 	};
+	private static Context context;
 
-	public static void start(ImageView image, View lay) {
+	public static void start(Context con, ImageView image, View lay, DisplayMetrics outMetrics) {
 		if (!isStarted) {
 
 			handler.postDelayed(stepTimer, 0);
 
 			isStarted = true;
 		}
+		context = con;
 		ball_t = image;
+		mBall = new Ball(con, outMetrics);
 		mBall.connect(ball_t);
 		layout = lay;
 	}

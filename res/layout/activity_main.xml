@@ -3,9 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/MainLayout"
-    tools:context="com.luk.pong.MainActivity" >
+    tools:context="com.luk.pong.game.GameActivity" >
 
-     <com.luk.pong.Board 
+     <com.luk.pong.game.Board 
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:id="@+id/boardView"

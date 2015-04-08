@@ -1,4 +1,4 @@
-package com.luk.pong;
+package com.luk.pong.game;
 
 import android.content.Context;
 
